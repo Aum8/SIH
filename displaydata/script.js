@@ -3,30 +3,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const projectList = document.getElementById("project-list");
     const searchInput = document.getElementById("search-input");
     const filterDropdown = document.getElementById("filter");
+    
+    let projectsData; // Define a variable to store the fetched data
 
-    const projectsDatabase = [
-        {
-            title: "Project 1",
-            description: "Description of project 1 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            topic: "Topic A",
-            techStack: "php",
-            university: "University X"
-        },
-        {
-            title: "Project 2",
-            description: "Description of project 2 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            topic: "Topic B",
-            techStack: "Stack 2",
-            university: "University Y"
-        },
-        {
-            title: "Project 3",
-            description: "Description of project 3 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            topic: "Topic C",
-            techStack: "Stack 3",
-            university: "University Z"
-        }
-    ];
+    // Fetch data from the JSON file
+    fetch("projects.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => {
+            projectsData = data; // Store the fetched data in the variable
+            populateProjects(data);
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
 
     function populateProjects(projects) {
         projectList.innerHTML = "";
@@ -41,20 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
             projectList.appendChild(listItem);
         }
     }
-    populateProjects(projectsDatabase);
 
     searchButton.addEventListener("click", function () {
         const searchTerm = searchInput.value.toLowerCase();
         const filter = filterDropdown.value;
 
-        let filteredProjects = projectsDatabase;
+        let filteredProjects = projectsData; // Use the variable containing the data
 
         // Filter based on selected filter criteria
         if (filter !== "all") {
-            filteredProjects = projectsDatabase.filter((project) => project[filter].toLowerCase().includes(searchTerm));
+            filteredProjects = projectsData.filter((project) => project[filter].toLowerCase().includes(searchTerm));
         } else {
             // If "All" is selected, show all projects that contain the search term in any field
-            filteredProjects = projectsDatabase.filter((project) => {
+            filteredProjects = projectsData.filter((project) => {
                 for (const key in project) {
                     if (project[key].toLowerCase().includes(searchTerm)) {
                         return true;
@@ -68,3 +61,4 @@ document.addEventListener("DOMContentLoaded", function () {
         populateProjects(filteredProjects);
     });
 });
+

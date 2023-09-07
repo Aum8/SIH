@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const formData = new FormData(form);
 
         // Send data to the server or API using Fetch
-        fetch("submit_project_endpoint", {
+        fetch("projects.json", {
             method: "POST",
             body: formData,
         })

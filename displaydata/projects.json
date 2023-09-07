@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Project 1",
+        "description": "Description of project 1 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "topic": "Topic A",
+        "techStack": "php",
+        "university": "University X"
+    },
+    {
+        "title": "Project 2",
+        "description": "Description of project 2 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "topic": "Topic B",
+        "techStack": "Stack 2",
+        "university": "University Y"
+    },
+    {
+        "title": "Project 3",
+        "description": "Description of project 3 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "topic": "Topic C",
+        "techStack": "Stack 3",
+        "university": "University Z"
+    }
+]
