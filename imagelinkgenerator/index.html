@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Form</title>
+    <!-- Include any additional stylesheets or scripts you need -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add Project</h1>
+        <form method="post" id="projectForm">
+            <label for="projectName">Project Name:</label>
+            <input type="text" id="projectName" name="projectName" required>
+
+            <label for="projectDescription">Project Description:</label>
+            <textarea id="projectDescription" name="projectDescription" rows="6" style="resize: none;"
+                required></textarea>
+
+            <label for="projectTechStack">Project Tech Stack:</label>
+            <input type="text" id="projectTechStack" name="projectTechStack" required>
+
+            <label for="documentation">Documentation (PDF only):</label>
+            <input type="file" id="documentation" name="documentation" accept=".pdf">
+
+
+            <div>
+                <h3>Upload Images to Imgur (WAIT FOR YOUR IMAGES TO DISPLAY HERE..!!!)</h3>
+                <input type="file" id="fileInput" multiple>
+            </div>
+
+
+            <label for="userName">Your Name:</label>
+            <input type="text" id="userName" name="userName" required>
+
+            <label for="userEmail">Your Email:</label>
+            <input type="email" id="userEmail" name="userEmail" required>
+
+            <label for="collegeName">College Name:</label>
+            <input type="text" id="collegeName" name="collegeName" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <button type="submit">Submit Project</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
