@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const projectList = document.getElementById("project-list");
     const searchInput = document.getElementById("search-input");
     const filterDropdown = document.getElementById("filter");
+    const description = document.getElementById('description');
+    const points = document.querySelectorAll('#pointList li');
+
     
     let projectsData; // Define a variable to store the fetched data
 
@@ -35,6 +38,16 @@ document.addEventListener("DOMContentLoaded", function () {
             projectList.appendChild(listItem);
         }
     }
+
+    function animatePoints() {
+        points.forEach((point, index) => {
+          setTimeout(() => {
+            point.style.opacity = '1';
+            point.style.transform = 'translateY(0)';
+          }, index * 1000); // Adjust the delay (in milliseconds) as needed
+        });
+      }
+      window.onload =animatePoints();
 
     searchButton.addEventListener("click", function () {
         const searchTerm = searchInput.value.toLowerCase();
