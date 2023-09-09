@@ -1,0 +1,71 @@
+/* AddProject form styles */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Imgur image upload styles */
+#uploadedImages {
+    margin-top: 20px;
+}
+
+#uploadedImages h3 {
+    margin-top: 0;
+}
+
+#uploadedImages img {
+    max-height: 200px;
+    margin: 10px;
+}
+
+#uploadedImages a {
+    display: block;
+    text-align: center;
+    margin: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.ui {
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
